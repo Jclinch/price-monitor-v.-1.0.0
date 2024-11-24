@@ -31,7 +31,7 @@ The Price Scraper App is a powerful and easy-to-use tool for scraping and monito
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/jclinch/price-scraper-app.git
+   git clone https://github.com/Jclinch/price-monitor.git
    cd price-scraper-app
 
 yarn install
