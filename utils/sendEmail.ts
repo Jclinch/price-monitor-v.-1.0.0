@@ -1,21 +1,29 @@
 // path: C:\Users\Sunny\Documents\My Projects\New folder\price-monitor\utils\sendEmail.ts
 
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 
-export const sendEmail = async (subject: string, text: string) => {
+async function testEmail() {
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: "gmail",
     auth: {
-      user: process.env.NODEMAILER_EMAIL,
-      pass: process.env.NODEMAILER_PASSWORD,
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
-  await transporter.sendMail({
-    from: process.env.NODEMAILER_EMAIL,
-    to: process.env.NODEMAILER_EMAIL, // Or any recipient email
-    subject,
-    text,
-  });
-};
+  const mailOptions = {
+    from: process.env.EMAIL_USER,
+    to: "ghostwarzone2222@gmail.com", // Replace with your email for testing
+    subject: "Test Email",
+    text: "This is a test email.",
+  };
 
+  try {
+    await transporter.sendMail(mailOptions);
+    console.log("Test email sent successfully");
+  } catch (error) {
+    console.error("Failed to send test email:", error);
+  }
+}
+
+testEmail();

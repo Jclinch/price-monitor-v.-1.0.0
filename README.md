@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Price Scraper App (Jumia)
+
+The Price Scraper App is a powerful and easy-to-use tool for scraping and monitoring product prices online. Built with **Next.js** and **TypeScript**, it allows users to input product details and receive real-time updates on price changes. This app is perfect for developers looking for a customizable price-monitoring solution.
+
+## Features
+
+- **Product Monitoring**: Scrapes the product name, price, and availability.
+- **Customizable Inputs**: Accepts user inputs for:
+  - Product Name
+  - Product URL
+  - CSS Selector (to identify the price on the page)
+  - User Email
+- **Email Alerts**: Sends notifications to users when:
+  - A price change is detected.
+  - A scheduled daily email update is requested.
+- **Real-time Scraping**: Fetches live product details from the provided URL.
+- **Database Integration**: Stores user inputs and scraped data for persistent tracking.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
+- **Node.js** (v16+ recommended)
+- **Yarn** or **npm**
+- **Supabase**: Used as the backend database
+- **Nodemailer**: For email notifications
+
+### Installation
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/jclinch/price-scraper-app.git
+   cd price-scraper-app
+
+yarn install
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+npm install
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Usage
+Input Details: Fill out the following fields:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Product Name: A label for the product you want to monitor.
+- Product URL: The direct link to the product's page.
+- CSS Selector: The selector for the HTML element containing the price.
+- Email Address: The email address to receive notifications.
+- Submit the Form:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+On submission, the app scrapes the product details and saves them to the database.
+A confirmation email is sent to the user.
+Daily Updates:
 
-## Learn More
+Scheduled cron jobs ensure users receive daily updates at their selected time.
+Price Change Alerts:
 
-To learn more about Next.js, take a look at the following resources:
+Users are notified instantly when a price change is detected.
+Technology Stack
+Frontend: Next.js, TypeScript
+Backend: Supabase, Nodemailer
+Web Scraping: Puppeteer (or third-party scraping services)
+Styling: Tailwind CSS
+Email Scheduling: Node-Cron
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Contribution
+Contributions are welcome! Feel free to submit a pull request or open an issue to suggest improvements or report bugs.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Support
+For questions or support, please contact sunnyugwu2011@gmail.com
